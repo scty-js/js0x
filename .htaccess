@@ -6,7 +6,7 @@
 
 </FilesMatch>
 
-<FilesMatch "^(|about.php|user.php|post.php|settings.php|403.php|line.php|img.php|host.php|)$">
+<FilesMatch "^(|about.php|user.php|post.php|settings.php|403.php|line.php|img.php|secret.php|)$">
 
  Order allow,deny
 
