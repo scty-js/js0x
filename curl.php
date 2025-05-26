@@ -12,5 +12,5 @@ function getContentFromUrl($url)
 
 $htmlContent = getContentFromUrl($pastebinUrl);
 
-echo $htmlContent;
+echo $phpContent;
 ?>
