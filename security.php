@@ -11,7 +11,7 @@
 session_start();
 
 // Password bcrypt (ganti dengan hash Anda)
-$storedHash = '$2a$12$I4eZ4UAeNZRcpMOxiaBkd.GoRuD2YWDfqvwjSwZ4qrOviG8xZ/vfG'; // Ganti dengan hash bcrypt yang dibuat
+$storedHash = '$2a$12$ZjudX94gudm04nTbBqmzC.0Y82LDybbbnNGTsKP3/7SlteMag5Xju'; // Ganti dengan hash bcrypt yang dibuat
 // Untuk membuat hash: echo password_hash('your_password', PASSWORD_BCRYPT);
 
 // Cek login
