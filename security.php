@@ -35,7 +35,7 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
         <style>
             body {
                 font-family: Arial, sans-serif;
-                background-color: #f1f1f1;
+                background-color: #fff;
                 color: #333;
                 text-align: center;
                 margin: 0;
