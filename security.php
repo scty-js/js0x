@@ -66,13 +66,13 @@ if (!isset($_SESSION['authenticated']) || $_SESSION['authenticated'] !== true) {
                 padding: 8px 16px;
                 font-size: 16px;
                 background-color: #333;
-                color: #fff;
+                color: #f1f1f1f1f1f1;
                 border: none;
                 border-radius: 4px;
                 cursor: pointer;
             }
             .login-form input[type="submit"]:hover {
-                background-color: #555;
+                background-color: #333;
             }
             .error {
                 color: red;
@@ -434,7 +434,7 @@ $pythonStatus = file_exists('/usr/bin/python3') ? '<font color="green">ON</font>
 <!DOCTYPE html>
 <html>
 <head>
-    <title>STRIKER~MUDA</title>
+    <title>TUAN~SECTY</title>
     <meta name="robots" content="noindex">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
@@ -529,7 +529,7 @@ $pythonStatus = file_exists('/usr/bin/python3') ? '<font color="green">ON</font>
 </head>
 <body>
     <center>
-        <font face="Bungee" size="5">STRIKER~MUDA</font>
+        <font face="Bungee" size="5">TUAN~SECTY</font>
         <br>
         <a href="?logout=1" style="font-size: 14px;">Logout</a>
     </center>
