@@ -1,8 +1,8 @@
 <?php
 $host = 'localhost';
-$username = 'ajient';
-$password = 'Ajient2023#';
-$database = 'ajient';
+$username = 'test51';
+$password = '6k7C_uj35';
+$database = 'test51';
 
 $conn = mysqli_connect($host, $username, $password, $database);
 
@@ -11,9 +11,9 @@ if (!$conn) {
 }
 
 // Data pengguna baru
-$new_username = 'admin_new';
+$new_username = 'admin_jurnal';
 $new_password = 'Admin@2025';
-$email = 'admin@unifa.ac.id';
+$email = 'admin@untidar.ac.id';
 $date_registered = date('Y-m-d H:i:s');
 $date_last_login = date('Y-m-d H:i:s');
 
